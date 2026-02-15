@@ -6,9 +6,24 @@ using namespace std;
 
 const int ARRAY_SIZE = 5;
 
+void displayArray(string* arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << *(arr + i) << " ";
+    }
+    cout << endl;
+}
+
 string* reverseArray(string* arr, int size);
 void displayArray(string* arr, int size);
 
 int main(){
+    string* names = new string[ARRAY_SIZE] {
+        "Janet", "Jeffe", "Jin", "Joe", "Junio"
+    };
+
+    cout << "Original array: ";
+    displayArray(names, ARRAY_SIZE);
+
+    delete[] names;
 return 0;
 }
