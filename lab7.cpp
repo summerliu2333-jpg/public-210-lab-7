@@ -13,6 +13,21 @@ void displayArray(string* arr, int size) {
     cout << endl;
 }
 
+string* reverseArray(string* arr, int size) {
+    string* left = arr;
+    string* right = arr + size - 1;
+
+    while (left < right) {
+        string temp = *left;
+        *left = *right;
+        *right = temp;
+
+        left++;
+        right--;
+    }
+    return arr;
+}
+
 string* reverseArray(string* arr, int size);
 void displayArray(string* arr, int size);
 
@@ -23,6 +38,11 @@ int main(){
 
     cout << "Original array: ";
     displayArray(names, ARRAY_SIZE);
+
+    string* reversedNames = reverseArray(names, ARRAY_SIZE);
+
+    cout << "Reversed array: ";
+    displayArray(reversedNames, ARRAY_SIZE);
 
     delete[] names;
 return 0;
